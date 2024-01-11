@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Perdoname</title>
+
+    <link rel="stylesheet" type="text/css" href="./style.css" />
+  </head>
+  <body>
+    <main class="container">
+      <h1 class="title">Me perdonas?</h1>
+      <div class="content">
+        <button id="yesBtn" class="btn yes-btn">YES</button>
+        <button id="noBtn" class="btn no-btn">NO</button>
+      </div>
+    </main>
+  </body>
+
+  <script>
+    var noBtn = document.querySelector("#noBtn");
+    var yesBtn = document.querySelector("#yesBtn");
+
+    const getPosition = (el) => {
+      var rect = el.getBoundingClientRect();
+      return `X: ${rect.x}, Y: ${rect.y}`;
+    };
+
+    const setPosition = (el) => {
+      let randomX = Math.floor(Math.random() * window.innerWidth);
+      let randomY = Math.floor(Math.random() * 100);
+
+      el.style.position = "absolute";
+      el.style.left = randomX + "px";
+      el.style.top = randomY + "px";
+      return el;
+    };
+
+    const onMouseOver = () => {
+      noBtn.classList.add("no-btn-onmouseover");
+      setPosition(noBtn);
+    };
+
+    noBtn.addEventListener("mouseover", onMouseOver);
+
+    const resetTitle = () => {
+      document.querySelector(".title").innerHTML =
+        "Gracias. También te quiero :)";
+
+      noBtn.style.display = "none";
+    };
+
+    yesBtn.addEventListener("click", resetTitle);
+  </script>
+</html>

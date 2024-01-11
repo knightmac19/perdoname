@@ -1,0 +1,50 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: "Courier New", Courier, monospace;
+  background-color: #efefef;
+}
+
+.container {
+  width: 100%;
+  margin: 0 auto;
+  text-align: center;
+}
+
+h1 {
+  margin: 50px 0;
+}
+
+.content {
+  gap: 40px;
+  position: relative;
+  margin: 200px 0 200px 0;
+}
+
+.btn {
+  width: 80px;
+  padding: 8px 16px;
+  border: 1px solid rgba(93, 176, 240, 0.78);
+  color: white;
+  background-color: rgb(93, 176, 240);
+  border-radius: 8px;
+  margin: 0 5px;
+}
+
+.yes-btn:hover {
+  cursor: pointer;
+}
+
+.yes-btn:active {
+  color: white;
+  background-color: black;
+  border: 1px solid black;
+}
+
+.no-btn-onmouseover {
+  background-color: black;
+}
